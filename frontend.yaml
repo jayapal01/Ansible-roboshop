@@ -40,7 +40,7 @@
     notify: restart nginx service
 
   handlers:
-  - name: restart nginx servive
+  - name: restart nginx service
     ansible.builtin.service:
       name: nginx
       state: restarted
