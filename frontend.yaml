@@ -37,8 +37,10 @@
       src: nginx.service
       dest: /etc/nginx/nginx.conf
       remote_src: yes
+      notify: restart nginx service
 
-  - name: restart nginx serrive
+  - name: restart nginx servive
     ansible.builtin.service:
       name: nginx
       state: restarted
+      
