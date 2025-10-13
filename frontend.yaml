@@ -39,6 +39,7 @@
       remote_src: yes
     notify: restart nginx service
 
+  handlers:
   - name: restart nginx servive
     ansible.builtin.service:
       name: nginx
