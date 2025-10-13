@@ -22,6 +22,11 @@
       path: /usr/share/nginx/html/*
       state: absent
 
+  - name: create html directory
+    ansible.builtin.file:
+      path: /usr/share/nginx/html
+      state: directory
+
   - name: download file
     ansible.builtin.get_url:
       url: https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
@@ -30,13 +35,18 @@
   - name: unarchive file that downloaded
     ansible.builtin.unarchive:
       src: /tmp/frontend.zip
-      dest: /usr/share/nginx/html 
+      dest: /usr/share/nginx/html
+      remote_src: yes 
+
+  - name: remove default nginx conf
+    ansible.builtin.file:
+      path: /etc/nginx/nginx.conf
+      state: absent
 
   - name: copy and create reverse proxy server
     ansible.builtin.copy:
       src: nginx.service
       dest: /etc/nginx/nginx.conf
-      remote_src: yes
     notify: restart nginx service
 
   handlers:
