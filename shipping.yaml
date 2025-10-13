@@ -60,23 +60,23 @@
       enabled: yes
 
   
-- name: import data
-  community.mysql.mysql_db:
-    state: import
-    name: all
-    login_user: root
-    login_password: RoboShop@1
-    login_host: localhost
-    target: "{{ item }}"
-  loop:
-  - /app/db/schema.sql
-  - /app/db/app-user.sql 
-  - /app/db/master-data.sql
+  - name: import data
+    community.mysql.mysql_db:
+      state: import
+      name: all
+      login_user: root
+      login_password: RoboShop@1
+      login_host: localhost
+      target: "{{ item }}"
+    loop:
+    - /app/db/schema.sql
+    - /app/db/app-user.sql 
+    - /app/db/master-data.sql
 
-- name: restart shipping
-  ansible.builtin.service:
-    name: shipping
-    state: restarted
+  - name: restart shipping
+    ansible.builtin.service:
+      name: shipping
+      state: restarted
   
 
     
