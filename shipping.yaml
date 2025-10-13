@@ -60,7 +60,7 @@
       enabled: yes
 
   
-- name:  import load schema in the databases
+- name: import load schema in the databases
   community.mysql.mysql_db:
     state: import
     name: all
