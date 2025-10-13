@@ -73,9 +73,6 @@
     community.mysql.mysql_db:
       state: import
       name: all
-      login_user: root
-      login_password: RoboShop@1
-      login_host: localhost
       target: "{{ item }}"
     loop:
     - /app/db/schema.sql
