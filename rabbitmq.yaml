@@ -19,7 +19,7 @@
       state: started
       enabled: yes
 
-  - name: create user and assign permissions of rabbitmq  user
+  - name: create user and assign permissions of rabbitmq user
     community.rabbitmq.rabbitmq_user:
       name: roboshop
       password: roboshop123
@@ -28,6 +28,6 @@
           configure_priv: .*
           read_priv: .*
           write_priv: .*
-    state: present
+      state: present
       
   
