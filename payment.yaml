@@ -7,10 +7,10 @@
     ansible.builtin.pip:
       name: "{{ item }}"
       state: present
-      loop:
-      - python3
-      - gcc 
-      - python3-devel
+    loop:
+    - python3
+    - gcc 
+    - python3-devel
 
   - name: add system user
     ansible.builtin.user:
