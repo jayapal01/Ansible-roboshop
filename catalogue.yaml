@@ -64,6 +64,7 @@
   - name: install mongodb client in the catalogue server
     ansible.builtin.dnf:
       name: mongodb-mongosh
+      state: present
 
   - name: load products
     ansible.builtin.shell: mongosh --host localhost < /app/db/master-data.js
