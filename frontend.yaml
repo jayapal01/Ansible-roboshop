@@ -19,7 +19,7 @@
 
   - name: Remove file 
     ansible.builtin.file:
-      path: /usr/share/nginx/html/*
+      path: /usr/share/nginx/html
       state: absent
 
   - name: create html directory
@@ -47,9 +47,7 @@
     ansible.builtin.copy:
       src: nginx.service
       dest: /etc/nginx/nginx.conf
-    notify: restart nginx service
 
-  handlers:
   - name: restart nginx service
     ansible.builtin.service:
       name: nginx

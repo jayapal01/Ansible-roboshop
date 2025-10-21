@@ -58,7 +58,7 @@
       dest: /etc/systemd/system/shipping.service
 
   - name: daemon-reload service
-    ansible.builtin.systemd_service:
+    ansible.builtin.systemd:
       daemon_reload: true
 
   - name: start and enable service
