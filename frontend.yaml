@@ -45,7 +45,7 @@
 
   - name: copy and create reverse proxy server
     ansible.builtin.copy:
-      src: nginx.service
+      src: nginx.conf
       dest: /etc/nginx/nginx.conf
 
   - name: restart nginx service
