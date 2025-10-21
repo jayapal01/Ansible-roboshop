@@ -1,6 +1,7 @@
 - name: configure user component
-  hosts: local
-  connection: local
+  hosts: user
+  become: yes
+  # connection: local
   tasks:
   - name: disable default nodejs version
     ansible.builtin.command: dnf module disable nodejs -y

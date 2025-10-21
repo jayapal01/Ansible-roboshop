@@ -1,6 +1,6 @@
 - name: configure rabbitmq server
-  hosts: local
-  connection: local
+  hosts: rabbitmq
+  # connection: local
   become: yes
   tasks:
   - name: copy rabbitmq service file

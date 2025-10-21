@@ -1,6 +1,5 @@
 - name: configure cart component
-  hosts: local
-  connection: local
+  hosts: cart
   tasks:
   - name: disable default nodejs version
     ansible.builtin.command: dnf module disable nodejs -y

@@ -1,6 +1,6 @@
 - name: configure payment server
-  hosts: local
-  connection: local
+  hosts: payment
+  # connection: local
   become: yes
   tasks:
   - name: install python gcc and one another

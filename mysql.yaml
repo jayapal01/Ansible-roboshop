@@ -1,7 +1,7 @@
 - name: configure mysql server
   become: yes
-  hosts: local
-  connection: local
+  hosts: mysql
+  # connection: local
   tasks:
   - name: install mysql server
     ansible.builtin.dnf:

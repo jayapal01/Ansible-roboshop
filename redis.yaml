@@ -1,6 +1,7 @@
 - name: configure redis server
-  hosts: local
-  connection: local
+  hosts: redis
+  become: yes
+  # connection: local
   tasks:
   - name: disable and enable default redis
     ansible.builtin.shell: dnf module disable redis -y ; dnf module enable redis:7 -y

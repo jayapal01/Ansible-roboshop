@@ -1,7 +1,7 @@
 - name: configure shipping service
   become: yes
-  hosts: local
-  connection: local
+  hosts: shipping
+  # connection: local
   tasks: 
   - name: install maven and mysql
     ansible.builtin.dnf:
@@ -11,7 +11,6 @@
     - mysql
     - maven
 
-  tasks: 
   - name: install pymysql and cryptography
     ansible.builtin.pip:
       name: "{{ item }}"

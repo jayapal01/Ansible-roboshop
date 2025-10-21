@@ -1,7 +1,7 @@
 - name: configure frontend server
   become: yes
-  hosts: local
-  connection: local
+  hosts: frontend
+  # connection: local
   tasks:
   - name: disable and enable nginx configuration
     ansible.builtin.shell: dnf module disable nginx -y ; dnf module enable nginx:1.24 -y
